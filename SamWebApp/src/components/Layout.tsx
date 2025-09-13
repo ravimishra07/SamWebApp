@@ -2,7 +2,6 @@
 
 import Navbar from './Navbar';
 import SideDrawer from './SideDrawer';
-import { DrawerProvider } from '@/contexts/DrawerContext';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,16 +9,14 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <DrawerProvider>
-      <div className="min-h-screen bg-background flex">
-        <SideDrawer />
-        <div className="flex-1 flex flex-col lg:ml-80">
-          <Navbar />
-          <main className="flex-1 p-6">
-            {children}
-          </main>
-        </div>
+    <div className="min-h-screen bg-background">
+      <SideDrawer />
+      <div className="lg:ml-64">
+        <Navbar />
+        <main className="p-6">
+          {children}
+        </main>
       </div>
-    </DrawerProvider>
+    </div>
   );
 }

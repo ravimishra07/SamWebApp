@@ -1,6 +1,8 @@
 'use client';
 
 import Navbar from './Navbar';
+import SideDrawer from './SideDrawer';
+import { DrawerProvider } from '@/contexts/DrawerContext';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,11 +10,16 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <main className="flex-1">
-        {children}
-      </main>
-    </div>
+    <DrawerProvider>
+      <div className="min-h-screen bg-background flex">
+        <SideDrawer />
+        <div className="flex-1 flex flex-col lg:ml-80">
+          <Navbar />
+          <main className="flex-1 p-6">
+            {children}
+          </main>
+        </div>
+      </div>
+    </DrawerProvider>
   );
 }

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import DrawerToggle from '@/components/DrawerToggle';
 
 export default function Navbar() {
   const { user, signInWithGoogle, logout } = useAuth();
@@ -11,7 +12,8 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
+          <DrawerToggle />
           <Link href="/" className="text-2xl font-bold text-foreground">
             Sam App
           </Link>

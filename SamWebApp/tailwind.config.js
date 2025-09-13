@@ -18,6 +18,16 @@ module.exports = {
   	},
   	extend: {
   		colors: {
+  			// Custom theme colors
+  			bg: 'var(--bg)',
+  			surface: 'var(--surface)',
+  			muted: 'var(--muted)',
+  			accent: 'var(--accent)',
+  			accent2: 'var(--accent-2)',
+  			success: 'var(--success)',
+  			warning: 'var(--warning)',
+  			danger: 'var(--danger)',
+  			// Legacy shadcn/ui colors for compatibility
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
